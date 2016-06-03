@@ -1,6 +1,11 @@
 import threading
 import time
-import config
+import sys
+try:
+    import config
+except:
+    print("You need to create a config.py file containing your credentials.")
+    sys.exit()
 from ogame import Ogame
 
 def check_if_under_attack(ogame_instance):

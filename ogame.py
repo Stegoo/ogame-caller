@@ -1,4 +1,3 @@
-from game_constants import Ships, Speed, Missions, Buildings, Research, Defense
 from bs4 import BeautifulSoup
 import requests
 import json
