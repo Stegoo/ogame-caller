@@ -1,2 +1,2 @@
 pycall==2.2
-beautifulsoup4==4.1.3
+beautifulsoup4==4.4.1
