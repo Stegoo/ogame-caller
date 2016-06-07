@@ -1,6 +1,7 @@
 import threading
 import time
 import sys
+from pycall import CallFile, Call, Application
 try:
     import config
 except:
@@ -17,7 +18,7 @@ def check_if_under_attack(ogame_instance):
         time.sleep(timer - time.time() + 60)
 
 def call():
-        c = Call('SIP/0671968084@provider')
+        c = Call('SIP/%s@provider' % config.mobile_number)
         a = Application('Playback', 'hello-world')
         cf = CallFile(c, a)
         cf.spool()
