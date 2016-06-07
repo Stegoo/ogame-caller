@@ -16,7 +16,7 @@ def check_if_under_attack(ogame_instance):
         timer = time.time()
         time.sleep(timer - time.time() + 60)
 
-def call(number):
+def call():
         c = Call('SIP/0671968084@provider')
         a = Application('Playback', 'hello-world')
         cf = CallFile(c, a)
