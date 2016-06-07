@@ -19,8 +19,12 @@ Vagrant.configure(2) do |config|
 
     config.vm.provision "shell", inline: <<-SHELL
         sudo apt-get update
-        sudo apt-get install -y make g++ emacs git python3 python3-pip
+        sudo apt-get install -y git python3 python3-pip build-essential libxml2-dev libncurses5-dev libsqlite3-dev libssl-dev
         sudo pip3 install virtualenv
+        mkdir /tmp/asterisk
+        cd /tmp/asterisk
+        wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-11-current.tar.gz
+        tar -xvzf asterisk-11-current.tar.gz
     SHELL
 
 end

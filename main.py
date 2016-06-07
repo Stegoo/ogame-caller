@@ -12,8 +12,15 @@ def check_if_under_attack(ogame_instance):
     while (42):
         under_attack = ogame_instance.is_under_attack()
         print('UNDER ATTACK', under_attack)
+        call()
         timer = time.time()
-        time.sleep(timer - time.time() + 2)
+        time.sleep(timer - time.time() + 60)
+
+def call(number):
+        c = Call('SIP/0671968084@provider')
+        a = Application('Playback', 'hello-world')
+        cf = CallFile(c, a)
+        cf.spool()
 
 def main():
     try:

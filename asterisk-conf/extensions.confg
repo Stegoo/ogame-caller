@@ -1,0 +1,3 @@
+[outgoing]
+exten => _X.,1,Dial(SIP/${EXTEN}@provider)
+exten => _X.,n,Hangup()
