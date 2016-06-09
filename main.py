@@ -18,6 +18,7 @@ def check_if_under_attack(ogame_instance):
             asterisk.call()
         timer = time.time()
         next_check = randint(60,90) * 60
+        print('next check in : %s seconds' % next_check)
         time.sleep(timer - time.time() + next_check)
 
 def main():

@@ -7,7 +7,7 @@ def write_message(message):
     f.close()
 
 def write_call_file(mobile_number=config.mobile_number, max_retries=5, retry_time=300, wait_time=45, context="ogame_attack_warning"):
-    f = open('asterisk-conf/call-file/ogame_attack_warning', 'w+')
+    f = open(config.call_file, 'w+')
     f.write("Channel: SIP/%s@provider" % mobile_number)
     f.write("MaxRetries: %s" % max_retries)
     f.write("RetryTime: %s" % retry_time)
