@@ -1,27 +1,24 @@
 import threading
 import time
 import sys
-from pycall import CallFile, Call, Application
+from random import randint
 try:
     import config
 except:
     print("You need to create a config.py file containing your credentials.")
     sys.exit()
 from ogame import Ogame
+import asterisk
 
 def check_if_under_attack(ogame_instance):
     while (42):
-        under_attack = ogame_instance.is_under_attack()
-        print('UNDER ATTACK', under_attack)
-        call()
+        is_attacked = ogame_instance.is_under_attack()
+        print('UNDER ATTACK: %s' % is_attacked)
+        if is_attacked:
+            asterisk.call()
         timer = time.time()
-        time.sleep(timer - time.time() + 60)
-
-def call():
-        c = Call('SIP/%s@provider' % config.mobile_number)
-        a = Application('Playback', 'hello-world')
-        cf = CallFile(c, a)
-        cf.spool()
+        next_check = randint(60,90) * 60
+        time.sleep(timer - time.time() + next_check)
 
 def main():
     try:
