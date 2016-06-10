@@ -11,7 +11,7 @@ from ogame import Ogame
 from ogame_constant import Ships, Speed, Missions, Buildings, Research, Defense
 import asterisk
 
-def send_ressources_to_main_planet(ogame_instance, from_planet, resources):
+def send_resources_to_main_planet(ogame_instance, from_planet, resources):
     ships = [(Ships['LargeCargo'], config.og_large_cargo_to_send)]
     speed = Speed['100%']
     where = {'galaxy': config.og_main_planet_coordonates[0], 'system': config.og_main_planet_coordonates[1], 'position': config.og_main_planet_coordonates[2]}
@@ -30,7 +30,7 @@ def do_check(ogame_instance):
 
         if resources["metal"] > config.og_metal_threshold:
             for id_planet in config.og_planets:
-                send_ressources_to_main_planet(ogame_instance, id_planet, resources)
+                send_resources_to_main_planet(ogame_instance, id_planet, resources)
                 time.sleep(randint(5,12))
 
         timer = time.time()
